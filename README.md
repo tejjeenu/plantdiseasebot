@@ -1,4 +1,4 @@
-# Plant Disease Detection Program
+# Plant Disease Detection Project
 
 The aim of this project was to understand how to implement deep learning in a project whilst attempting to 
 Tackle a real world problem. I was looking into Object Detection through the YOLO algorithm to identify different types of plants including diseased and Healthy.  
