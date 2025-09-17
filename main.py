@@ -29,10 +29,10 @@ keyboard = Controller()
 
 #%% Capture image from camera
 
-conn = psycopg2.connect(user="postgres",
-                        password="datta001",
-                        host="127.0.0.1",
-                        port="5432",
+conn = psycopg2.connect(user=USER,
+                        password=PASSWORD,
+                        host=HOST,
+                        port=PORT,
                         database="plantdb")
 cursor = conn.cursor()
 peoplenotified = []
@@ -490,5 +490,6 @@ while 1:
     #general processing stuff 
 
     
+
 
 
