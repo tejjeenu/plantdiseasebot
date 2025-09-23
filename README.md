@@ -1,31 +1,75 @@
-# Plant Disease Detection Project
+# 🌱 Plant Disease Detection Project  
 
-The aim of this project was to understand how to implement deep learning in a project whilst attempting to 
-Tackle a real world problem. I was looking into Object Detection through the YOLO algorithm to identify different types of plants including diseased and Healthy.  
-The inspiration behind this was the awareness of lots of money being lost through farming simply through lack of awareness of plants having diseases, 
-Furthermore for a lot of people it is the only means of survival and so undiscovered plant disease can eliminate basic human needs for some people, 
-I therefore realised that it is a significant problem and was curious to investigate it. If there was a way to detect the diseases in plants early and 
-inform specific treatments to those identified diseases as well the problem would be reduced.
+## 📖 Overview  
 
-# What my project does?
-- The idea of my project is to simulate a AI drone
-- The Drone which in my case is an Arduino Car Robot will move in small distance increments
-- For each increment the Car moves, it will use the camera to view the surroundings or plants beneath in the case of the drone
-- The image data will be analysed from a computer with my AI model to identify the plant (healthy or diseased)
-- For each increment moved a map will be generated as a text file and each cell in the line of the file will represent every increment the Bot has moved across the field.
-- The cell will be written X if a disease is present in the cell or - if there is no disease present
-- A general map is also made to specify the plants detected at each increment the bot moves
-- The idea is that the disease map and general map can be viewed alongside eachother to see what diseases there are and their location.
-- In reality, geotagging would be a better idea and then a map would look at the geotagged properties of each image and form a compiled image of the detected plants and diseases in a field 
-- Furthermore, I used a relational database to specifiy what treatments to apply based on what plants were detected.
-- Another reason for the database is to notify specific farmers to apply treatments 
-- To control which farmers are sent which kinds to treatments to do, I made the option to add the farmers details to a database including their name, phone number for notifying and job key words
-- These key words are used to determine if a farmer is responsible for a specific treatment.
-- These farmers are notified automatically through whatsapp as soon as a field is scanned.
-- I made the treatments so that they can be repeated at intervals in case the treatment had to applied more than once therefore I specified date and repeat attributes in my database tables to determine when the treatment has to be applied again through SQL operations e.g. Adding the interval days to the date that the treatment was notified that day for reminding again
-- Overall this can ensure farmers can do the treatments as soon as possible as they have gained awareness, it is also very efficient as it avoids the human effort of having to decide who does what task as it is done automatically
+This project applies **deep learning** to solve a critical agricultural challenge:  
+**early detection of plant diseases.**  
+Using the **YOLO object detection algorithm**, the system identifies plant types and distinguishes between **healthy** and **diseased** specimens.  
 
-# Technologies used:
-- C# (ASP.net) for UI
-- Python for main processing e.g. yolov8 model, data processing, SQL
-- PostGreSQL for relational database storing relevant plant disease treatment data
+---
+
+## ❌ The Problem  
+
+- **Crop losses** due to plant diseases cause massive **economic damage** and threaten **food security**.  
+- Many farmers lack the resources for **early diagnosis**, meaning diseases spread before they can be treated.  
+- Manual field inspection is **time-consuming, inefficient, and error-prone**, especially for large farms.  
+- Without timely action, farmers often face **reduced yields**, financial hardship, and wasted resources.  
+
+---
+
+## ✅ The Solution  
+
+The **Plant Disease Detection Project** uses **AI-driven automation** to make disease detection and response:  
+- **Faster** – Camera-equipped robots simulate drones to scan fields automatically.  
+- **Smarter** – YOLOv8 detects plant types and identifies diseases in real time.  
+- **Actionable** – The system maps where diseases occur and sends **WhatsApp treatment notifications** to the right farmer.  
+- **Scalable** – Can be applied to larger farms, more plant types, and multiple diseases.  
+
+This means farmers can **act immediately**, apply **targeted treatments**, and **protect their crops and income.**  
+
+---
+
+## ⚙️ How It Works  
+
+1. **Field Scanning** – An Arduino-based robot (drone simulation) moves across the field in small steps.  
+2. **Image Capture** – At each step, it captures plant images with a camera.  
+3. **AI Analysis** – Images are processed by YOLOv8 to classify plants as healthy or diseased.  
+4. **Mapping** –  
+   - `X` = diseased plant  
+   - `-` = healthy plant  
+   - Separate map for plant type detection  
+   - (Future: GPS geotagging for spatial accuracy)  
+5. **Automated Treatment Notification** – PostgreSQL database stores treatments + farmer contacts.  
+   - Assigns tasks to the correct farmer (based on job keywords).  
+   - Sends treatment recommendations via WhatsApp.  
+   - Tracks reminders and repeat treatments with SQL.  
+
+---
+
+## 🌟 Benefits  
+
+- **⏱️ Timely Awareness** – Farmers get notified instantly when disease is detected.  
+- **⚡ Efficiency** – Reduces manual inspection and ensures the right farmer applies the right treatment.  
+- **📈 Scalability** – Can expand to cover different crops, diseases, or larger farms.  
+- **💰 Economic Security** – Helps reduce crop loss, improving yield and income.  
+
+---
+
+## 🛠️ Technologies Used  
+
+- **C# (ASP.NET)** – User Interface  
+- **Python** – YOLOv8 model, image analysis, database operations  
+- **PostgreSQL** – Relational database for plants, diseases, treatments, and farmers  
+
+---
+
+## 📌 Next Steps  
+
+- Add **GPS-based geotagging** for precise mapping.  
+- Expand database with more crops and diseases.  
+- Integrate with **real drones** for large-scale deployment.  
+
+---
+
+💡 By combining **AI, automation, and agriculture**, this project helps farmers fight crop disease efficiently, protecting both **food supply** and **livelihoods.**  
+
